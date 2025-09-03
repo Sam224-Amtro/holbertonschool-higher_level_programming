@@ -4,4 +4,4 @@ for k in range(10):
         if k == 8 and j == 9:
             print(f"{k}{j}")
         else:
-            print(f"{k}{j}, ", end="")
+            print(f"{k}{j}, ", end=", ")
