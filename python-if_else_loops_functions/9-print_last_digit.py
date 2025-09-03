@@ -9,5 +9,6 @@ def print_last_digit(number):
     # On affiche ce dernier chiffre, sans saut de ligne
     print(last_digit, end="")
 
-    # La fonction retourne aussi le dernier chiffre (utile si on veut l'utiliser après)
+    # La fonction retourne aussi le dernier chiffre
+    # (cela peut être utile si on veut l'utiliser après
     return last_digit
