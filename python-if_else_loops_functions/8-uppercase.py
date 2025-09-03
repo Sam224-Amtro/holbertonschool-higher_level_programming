@@ -2,19 +2,18 @@
 
 # Définition de la fonction uppercase
 def uppercase(str):
-    result = "" # on prépare une chaîne vide qui va contenir le résultat final
-
-    # On parcourt chaque caractère de la chaîne donnée en paramètre
+    # On parcourt chaque caractère de la chaîne passée en argument
     for c in str:
         # Vérifie si le caractère est une lettre minuscule
-        if 'a' <= c <= 'z':
-            # Si c'est une minuscule, on la convertit en majuscule
-            # Comment ? On prend son code ASCII avec ord(), on soustrait 32
-            # puis on retransforme en caractère avec chr()
-            result += chr(ord(c) - 32)
-        else:
-            # Si ce n'est pas une minuscule (ex: majuscule, chiffre, espace, accent...),
-            # on le laisse tel quel
-            result += c
-    # On affiche la chaîne finale transformée
-    print(result)
+        if ord(c) >= ord('a') and ord(c) <= ord('z'):
+            # Conversion en majuscule :
+            # ord(c) donne le code ASCII de la minuscule
+            # on soustrait 32 pour obtenir le code de la majuscule
+            # chr() transforme ce code en caractère
+            c = chr(ord(c) - 32)
+
+        # Affiche le caractère (modifié ou non) sans retour à la ligne
+        print("{}".format(c), end='')
+
+    # Après la boucle, on ajoute un retour à la ligne
+    print()
