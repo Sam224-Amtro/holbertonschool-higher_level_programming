@@ -8,4 +8,4 @@ if __name__ == "__main__":
     for k in range(1, count):
         add += int(sys.argv[k])
 
-        print("{}".format(add))
+    print("{}".format(add))
