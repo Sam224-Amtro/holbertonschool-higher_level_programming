@@ -9,9 +9,9 @@ subtraction = sub(a, b)
 multiplication = mul(a, b)
 division = div(a, b)
 
-print(f"{a} + {b} = {addition}")
-print(f"{a} - {b} = {subtraction}")
-print(f"{a} * {b} = {multiplication}")
-print(f"{a} / {b} = {division}")
+print("{} + {} = {}".format(a, b, addition))
+print("{} - {} = {}".format(a, b, subtraction))
+print("{} * {} = {}".format(a, b, multiplication))
+print("{} / {} = {}".format(a, b, division))
 
 
