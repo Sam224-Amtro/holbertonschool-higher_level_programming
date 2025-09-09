@@ -1,11 +1,4 @@
 #!/usr/bin/python3
-# Fonction qui retourne une nouvelle matrice où chaque élément
-# est le carré de l’élément original.
-# Paramètre :
-#   matrix : une liste de listes (matrice 2D)
-# Retour :
-#   une nouvelle matrice avec les mêmes dimensions,
-#   mais contenant les carrés des valeurs
 
 def square_matrix_simple(matrix=[]):
     new_matrix = []  # nouvelle matrice vide qui contiendra le résultat
