@@ -13,4 +13,4 @@ def search_replace(my_list, search, replace):
             # sinon on garde l'élément tel quel
             new_list.append(element)
 
-    return new_list # on retourne la nouvelle liste
+    return new_list  # on retourne la nouvelle liste
