@@ -23,7 +23,8 @@ def roman_to_int(roman_string):
         current = values.get(roman_string[k], 0)  # valeur actuelle
 
         # Si la valeur actuelle est plus petite que la prochaine → on soustrait
-        if k + 1 < len(roman_string) and current < values.get(roman_string[k + 1], 0):
+        if (k + 1 < len(roman_string) and
+                current < values.get(roman_string[k + 1], 0)):
             total -= current
         # Sinon → on additionne
         else:
