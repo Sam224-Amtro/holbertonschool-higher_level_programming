@@ -2,27 +2,20 @@
 
 def safe_print_list(my_list=[], x=0):
     """
-    Affiche jusqu’à `x` éléments d’une liste
+    Affiche au plus `x` éléments d’une liste
     et retourne combien ont été affichés.
     """
 
-# Compteur du nombre d'éléments effectivement affichés
+    # Initialiser le compteur d'éléments affichés
     count = 0
 
-    # Parcours des indices de 0 à x-1
-    for i in range(x):
-        # Vérifie si l'indice est valide dans la liste
-        if i < len(my_list):
-            # Affiche l'élément sans retour à la ligne
-            print(my_list[i], end="")
-            # Incrémente le compteur
-            count += 1
-        else:
-            # Si on dépasse la taille de la liste, on arrête la boucle
-            break
+    # Parcourir les éléments jusqu'à x ou la fin de la liste
+    for i in range(min(x, len(my_list))):
+        print(my_list[i], end="")   # Affiche l’élément sans retour à la ligne
+        count += 1                  # Incrémenter le compteur
 
-    # Ajoute un saut de ligne après l'affichage
+    # Ajouter un saut de ligne à la fin
     print()
 
-    # Retourne le nombre d'éléments réellement affichés
+    # Retourner le nombre d’éléments affichés
     return count
