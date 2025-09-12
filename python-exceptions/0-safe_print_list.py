@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def safe_print_list(my_list=[], x=0):
-    """Affiche au maximum x éléments d'une liste et retourne combien ont été affichés."""
 
     # Compteur pour savoir combien d’éléments ont vraiment été affichés
     count = 0
