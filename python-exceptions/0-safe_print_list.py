@@ -1,21 +1,19 @@
 #!/usr/bin/python3
-
 def safe_print_list(my_list=[], x=0):
-    """
-    Affiche au plus `x` éléments d’une liste
-    et retourne combien ont été affichés.
-    """
+    # Compteur du nombre d'éléments réellement imprimés
+    compteur = 0
 
-    # Initialiser le compteur d'éléments affichés
-    count = 0
-
-    # Parcourir les éléments jusqu'à x ou la fin de la liste
-    for i in range(min(x, len(my_list))):
-        print(my_list[i], end="")   # Affiche l’élément sans retour à la ligne
-        count += 1                  # Incrémenter le compteur
-
-    # Ajouter un saut de ligne à la fin
+    # On essaie d'imprimer x éléments
+    for k in range(x):
+        try:
+            # On imprime l'élément sans retour à la ligne
+            print(my_list[k], end="")
+            # Si l'impression réussit, on incrémente le compteur
+            compteur += 1
+        except IndexError:
+            # Si l'élément n'existe pas (IndexError), on arrête la boucle
+            break
+    # Impression d'un retour à la ligne après tous les éléments
     print()
-
-    # Retourner le nombre d’éléments affichés
-    return count
+    # On retourne le nombre réel d'éléments imprimés
+    return (compteur)
