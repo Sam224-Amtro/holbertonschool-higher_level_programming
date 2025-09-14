@@ -1,23 +1,33 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> say_my_name("Cloud", "Strife")
-My name is Cloud Strife
+# Test case 1: Normal usage with first and last name
+>>> say_my_name("John", "Smith")
+My name is John Smith
 
->>> say_my_name("Nanaki")
-My name is Nanaki
+# Test case 2: Only first name
+>>> say_my_name("Bob")
+My name is Bob
 
->>> say_my_name(21, "Tifa")
+# Test case 3: First name is not a string
+>>> say_my_name(12, "White")
 Traceback (most recent call last):
-	...
 TypeError: first_name must be a string
 
->>> say_my_name("Aerith", None)
+# Test case 4: Last name is not a string
+>>> say_my_name("Walter", 12)
 Traceback (most recent call last):
-	...
 TypeError: last_name must be a string
 
->>> say_my_name("", "Barret")
-My name is Barret
+# Test case 5: Both names are not strings
+>>> say_my_name(12, 13)
+Traceback (most recent call last):
+TypeError: first_name must be a string
 
+# Test case 6: Empty strings
 >>> say_my_name("", "")
-My name is Barret
+My name is
+
+# Test case 7: No arguments
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
