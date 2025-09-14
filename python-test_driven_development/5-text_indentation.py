@@ -1,30 +1,31 @@
 #!/usr/bin/python3
 """
-    prints a text with 2 new lines after each of these characters: ., ? and :
+This module provides a function to format text with specific indentation rules.
 """
 
 
 def text_indentation(text):
     """
-    prints a text with 2 new lines after each of these characters: ., ? and :
-
-    Args:
-        text (string): contient un texte
-
-    Raises:
-        TypeError: le texte doit être de type string
+    Indente un texte en fonction des caractères de ponctuation suivants : .,
+    ?, et :. Si le texte n'est pas une chaîne de caractères, une exception
+    TypeError est levée.
     """
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    caractere = ""
+    flag = 1
 
-    for char in text:
-        caractere += char
+    for letter in text:
+        if flag == 1:
+            if letter == ' ':
+                continue
+            else:
 
-        if char in '.?:':
-            print(caractere.strip(), end="\n\n")
-            caractere = ""
+                flag = 0
 
-    if caractere:
-        print(caractere.strip())
+        print(letter, end="")
+
+        if letter in ".?:":
+            print("\n")
+            flag = 1

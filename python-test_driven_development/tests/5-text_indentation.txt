@@ -1,36 +1,32 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Non autem hoc:")
-Lorem ipsum dolor sit amet.
-<BLANKLINE>
-Quonam modo?
-<BLANKLINE>
-Non autem hoc:
-<BLANKLINE>
 
->>> text_indentation("Hello world. This is a test?")
-Hello world.
+>>> text_indentation("hello")
+hello
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("hell:o")
+hell:
 <BLANKLINE>
-This is a test?
-<BLANKLINE>
+o
 
 >>> text_indentation("")
 
 
->>> text_indentation(123)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
-
->>> text_indentation("This is just a simple line")
-This is just a simple line
-
->>> text_indentation("This is a test.    This is another test.")
-This is a test.
+>>> text_indentation("hell.o")
+hell.
 <BLANKLINE>
-This is another test.
+o
+
+>>> text_indentation("hell?o")
+hell?
+<BLANKLINE>
+o
+
+>>> text_indentation(".")
+.
 <BLANKLINE>
 
->>> text_indentation("One sentence only: end")
-One sentence only:
-<BLANKLINE>
-end
+>>> text_indentation("    ")
