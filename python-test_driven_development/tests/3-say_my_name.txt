@@ -20,4 +20,4 @@ TypeError: last_name must be a string
 My name is Barret
 
 >>> say_my_name("", "")
-My name is
+My name is Barret
