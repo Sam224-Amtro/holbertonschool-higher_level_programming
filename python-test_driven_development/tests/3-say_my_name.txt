@@ -1,40 +1,33 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-# Cas valides avec des noms complets
+# Test case 1: Normal usage with first and last name
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
->>> say_my_name("Walter", "White")
-My name is Walter White
-
+# Test case 2: Only first name
 >>> say_my_name("Bob")
 My name is Bob
 
-# Cas avec des erreurs de type
+# Test case 3: First name is not a string
 >>> say_my_name(12, "White")
 Traceback (most recent call last):
-    ...
 TypeError: first_name must be a string
 
->>> say_my_name("John", 45.6)
+# Test case 4: Last name is not a string
+>>> say_my_name("Walter", 12)
 Traceback (most recent call last):
-    ...
 TypeError: last_name must be a string
 
->>> say_my_name(None, "Smith")
+# Test case 5: Both names are not strings
+>>> say_my_name(12, 13)
 Traceback (most recent call last):
-    ...
 TypeError: first_name must be a string
 
->>> say_my_name(["list"], "Smith")
+# Test case 6: Empty strings
+>>> say_my_name("", "")
+My name is
+
+# Test case 7: No arguments
+>>> say_my_name()
 Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
-
-# Cas avec une chaîne vide
->>> say_my_name("", "Doe")
-My name is  Doe
-
-# Cas avec une chaîne très longue
->>> say_my_name("A" * 1000, "B" * 1000) # doctest: +ELLIPSIS
-My name is AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
