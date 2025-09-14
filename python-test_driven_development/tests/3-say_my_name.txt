@@ -1,0 +1,40 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Cas valides avec des noms complets
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Bob")
+My name is Bob
+
+# Cas avec des erreurs de type
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 45.6)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name(["list"], "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Cas avec une chaîne vide
+>>> say_my_name("", "Doe")
+My name is  Doe
+
+# Cas avec une chaîne très longue
+>>> say_my_name("A" * 1000, "B" * 1000) # doctest: +ELLIPSIS
+My name is AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...
