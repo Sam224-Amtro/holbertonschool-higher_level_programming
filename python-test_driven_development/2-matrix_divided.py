@@ -34,8 +34,8 @@ def matrix_divided(matrix, div):
             not all(isinstance(num, (int, float))
                     for row in matrix for num in row)):
         raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-            )
+            "matrix must be a matrix (array of arrays) of integers/floats"
+        )
 
     # Vérification que toutes les lignes ont la même taille
     row_len = len(matrix[0])
