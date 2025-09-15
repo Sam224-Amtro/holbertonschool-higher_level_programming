@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Fichier qui définit une classe Square."""
+"""Defines an empty Square class"""
 
 class Square:
-    """Classe représentant un carré."""
+    """Represents a square"""
     pass
