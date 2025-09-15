@@ -1,30 +1,29 @@
 #!/usr/bin/python3
+class Square:
+    """Class that defines a square."""
 
-class Carre:
-    """Une classe qui définit un carré."""
-
-    def __init__(self, taille=0):
+    def __init__(self, size=0):
         """
-        Initialise le carré avec une taille optionnelle.
+        Initialize the square with an optional size.
 
         Args:
-            taille (int): La longueur du côté du carré. Par défaut 0.
+            size (int): Length of the square's side. Default is 0.
 
         Raises:
-            TypeError: Si taille n’est pas un entier.
-            ValueError: Si taille est inférieure à 0.
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
-        if not isinstance(taille, int):
-            raise TypeError("taille doit être un entier")
-        if taille < 0:
-            raise ValueError("taille doit être >= 0")
-        self.__taille = taille
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
 
-    def aire(self):
+    def area(self):
         """
-        Calcule et retourne l’aire du carré.
+        Calculate and return the area of the square.
 
         Returns:
-            int: L’aire du carré.
+            int: The area of the square.
         """
-        return self.__taille ** 2
+        return self.__size ** 2
