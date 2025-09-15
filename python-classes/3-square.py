@@ -1,17 +1,28 @@
 #!/usr/bin/python3
+"""
+Module 3-square
+Définit une classe Square qui représente un carré.
+"""
+
+
 class Square:
-    """Class that defines a square."""
+    """
+    Représente un carré.
+
+    Attributs :
+        __size (int) : La taille du carré (privée).
+    """
 
     def __init__(self, size=0):
         """
-        Initialize the square with an optional size.
+        Initialise un nouveau carré.
 
-        Args:
-            size (int): Length of the square's side. Default is 0.
+        Args :
+            size (int) : La taille du carré. Par défaut 0.
 
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+        Raises :
+            TypeError : Si size n'est pas un entier.
+            ValueError : Si size est inférieur à 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -21,9 +32,9 @@ class Square:
 
     def area(self):
         """
-        Calculate and return the area of the square.
+        Calcule et retourne l'aire du carré.
 
-        Returns:
-            int: The area of the square.
+        Returns :
+            int : L'aire du carré.
         """
         return self.__size ** 2
