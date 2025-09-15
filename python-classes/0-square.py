@@ -3,4 +3,4 @@
 
 class Square:
     """Classe représentant un carré."""
-    pass  # rien à mettre pour l'instant
+    pass
