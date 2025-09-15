@@ -1,8 +1,6 @@
 #!/usr/bin/python3
+"""Module définissant une classe Square encore vide."""
 
-# Définition d'une classe appelée Square (Carré)
 class Square:
-
-    # 'pass' est une instruction vide : elle permet de créer une classe
-    # sans contenu pour l'instant (classe "vide" servant de squelette)
+    """Classe représentant un carré, sans attributs ni méthodes pour l'instant."""
     pass
