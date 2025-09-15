@@ -1,10 +1,17 @@
 #!/usr/bin/python3
+"""
+Module 1-square
+Définit une classe Square
+"""
+
 
 class Square:
-    # Définition d'une classe nommée "Square" (Carré)
+    """
+    Représente un carré.
 
-    def __int__(self, size):
+    Attributs:
+    __size (int) : La taille du carré
+    """
+
+    def __init__(self, size):
         self.__size = size
-        # Ici, l'intention est probablement de créer un constructeur
-        # qui initialise la taille du carré avec l'attribut privé __size.
-
