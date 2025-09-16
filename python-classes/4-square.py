@@ -10,23 +10,23 @@ class Carre:
     Représente un carré.
 
     Attributs :
-        __taille (int): La taille du carré (privé).
+        __size (int): La taille du carré (privé).
     """
-    def __init__(self, taille=0):
+    def __init__(self, size=0):
         """
         Initialise un nouveau carré.
 
         Args:
-            taille (int): La taille du carré. Par défaut 0.
+            size (int): La taille du carré. Par défaut 0.
 
         Raises:
             TypeError: Si taille n’est pas un entier.
             ValueError: Si taille est inférieure à 0.
         """
-        self.taille = taille
+        self.size = size
 
     @property
-    def taille(self):
+    def size(self):
         """
         Récupère la taille du carré.
 
@@ -35,8 +35,8 @@ class Carre:
         """
         return self.__taille
 
-    @taille.setter
-    def taille(self, valeur):
+    @size.setter
+    def size(self, valeur):
         """
         Définit la taille du carré.
 
@@ -51,7 +51,7 @@ class Carre:
             raise TypeError("la taille doit être un entier")
         if valeur < 0:
             raise ValueError("la taille doit être >= 0")
-        self.__taille = valeur
+        self.__size = valeur
 
     def aire(self):
         """
@@ -60,4 +60,4 @@ class Carre:
         Returns:
             int: L’aire du carré.
         """
-        return self.__taille ** 2
+        return self.__size ** 2
