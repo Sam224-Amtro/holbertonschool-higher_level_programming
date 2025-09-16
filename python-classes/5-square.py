@@ -1,67 +1,76 @@
 #!/usr/bin/python3
+"""
+Module 5-carre
+Définit une classe Carré qui représente un carré.
+"""
 
-class Square:
-    """Une classe qui définit un carré."""
 
-    def __init__(self, size=0):
+class Carre:
+    """
+    Représente un carré.
+
+    Attributs :
+        __taille (int) : La taille du côté du carré (privé).
+    """
+
+    def __init__(self, taille=0):
         """
-        Constructeur de la classe Square.
+        Initialise un nouveau carré.
 
-        Paramètres :
-            size (int) : La taille du côté du carré (par défaut 0).
+        Arguments :
+            taille (int) : La taille du côté du carré. Par défaut 0.
 
-        On passe par le setter pour profiter de la validation des données.
+        Lève :
+            TypeError : Si taille n’est pas un entier.
+            ValueError : Si taille est inférieur à 0.
         """
-        self.size = size
+        self.taille = taille
 
     @property
-    def size(self):
+    def taille(self):
         """
-        Getter pour récupérer la taille du carré.
+        Récupère la taille du côté du carré.
 
         Retourne :
-            int : La taille actuelle (côté du carré).
+            int : La taille du côté du carré.
         """
-        return self.__size
+        return self.__taille
 
-    @size.setter
-    def size(self, value):
+    @taille.setter
+    def taille(self, valeur):
         """
-        Setter pour modifier la taille du carré avec validation.
+        Définit la taille du côté du carré.
 
-        Paramètres :
-            value (int) : Nouvelle taille à attribuer.
+        Arguments :
+            valeur (int) : La nouvelle taille du côté du carré.
 
-        Exceptions :
-            TypeError : si value n'est pas un entier.
-            ValueError : si value est négatif.
+        Lève :
+            TypeError : Si valeur n’est pas un entier.
+            ValueError : Si valeur est inférieur à 0.
         """
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
+        if not isinstance(valeur, int):
+            raise TypeError("la taille doit être un entier")
+        if valeur < 0:
+            raise ValueError("la taille doit être >= 0")
+        self.__taille = valeur
 
-        self.__size = value
-
-    def area(self):
+    def aire(self):
         """
-        Méthode pour calculer l’aire du carré.
+        Calcule l’aire du carré.
 
         Retourne :
-            int : Aire du carré (côté × côté).
+            int : L’aire du carré.
         """
-        return self.__size ** 2
+        return self.__taille ** 2
 
-    def my_print(self):
+    def afficher(self):
         """
-        Méthode pour afficher le carré avec le caractère `#`.
+        Affiche le carré avec le caractère #.
 
-        - Si size = 0 : affiche une ligne vide.
-        - Sinon : affiche un carré formé de `#`,
-          de dimensions size × size.
+        Si la taille est 0, affiche une ligne vide.
         """
-        if self.__size == 0:
+        if self.__taille == 0:
             print("")
         else:
-            for _ in range(self.__size):
-                print("#" * self.__size)
+            for _ in range(self.__taille):
+                print("#" * self.__taille)
