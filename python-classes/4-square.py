@@ -1,27 +1,27 @@
 #!/usr/bin/python3
 """
-Module 4-carre
-Définit une classe Carre qui représente un carré.
+Module 4-square
+Définit une classe Square qui représente un carré.
 """
 
 
-class Carre:
+class Square:
     """
     Représente un carré.
 
     Attributs :
-        __size (int): La taille du carré (privé).
+        __size (int) : La taille du carré (privé).
     """
     def __init__(self, size=0):
         """
         Initialise un nouveau carré.
 
-        Args:
-            size (int): La taille du carré. Par défaut 0.
+        Arguments :
+            size (int) : La taille du carré. Par défaut 0.
 
-        Raises:
-            TypeError: Si taille n’est pas un entier.
-            ValueError: Si taille est inférieure à 0.
+        Lève :
+            TypeError : Si size n’est pas un entier.
+            ValueError : Si size est inférieur à 0.
         """
         self.size = size
 
@@ -30,34 +30,34 @@ class Carre:
         """
         Récupère la taille du carré.
 
-        Returns:
-            int: La taille du carré.
+        Retourne :
+            int : La taille du carré.
         """
-        return self.__taille
+        return self.__size
 
     @size.setter
-    def size(self, valeur):
+    def size(self, value):
         """
         Définit la taille du carré.
 
-        Args:
-            valeur (int): La nouvelle taille du carré.
+        Arguments :
+            value (int) : La nouvelle taille du carré.
 
-        Raises:
-            TypeError: Si valeur n’est pas un entier.
-            ValueError: Si valeur est inférieure à 0.
+        Lève :
+            TypeError : Si value n’est pas un entier.
+            ValueError : Si value est inférieur à 0.
         """
-        if not isinstance(valeur, int):
-            raise TypeError("la taille doit être un entier")
-        if valeur < 0:
-            raise ValueError("la taille doit être >= 0")
-        self.__size = valeur
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
-    def aire(self):
+    def area(self):
         """
         Calcule l’aire du carré.
 
-        Returns:
-            int: L’aire du carré.
+        Retourne :
+            int : L’aire du carré.
         """
         return self.__size ** 2
