@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module 4-carré
-Définit une classe Carré qui représente un carré.
+Module 4-carre
+Définit une classe Carre qui représente un carré.
 """
 
 
