@@ -8,8 +8,8 @@ class Rectangle:
     """Defines a rectangle."""
 
     # Attributs de classe
-    number_of_instances = 0   # Compte le nombre d'instances créées
-    print_symbol = "#"        # Symbole utilisé pour l'affichage du rectangle
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
