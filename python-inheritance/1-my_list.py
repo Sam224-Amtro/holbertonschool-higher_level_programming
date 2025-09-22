@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module documentation"""
+"""Defines an inherited list class MyList."""
+
 
 class MyList(list):
     """Une sous-classe de `list` avec une méthode supplémentaire
