@@ -1,0 +1,32 @@
+Test instantiation and inheritance
+>>> from my_list import MyList
+>>> mylist = MyList()
+>>> isinstance(mylist, MyList)
+True
+>>> isinstance(mylist, list)
+True
+
+Test __str__ with empty list
+>>> str(mylist)
+'[]'
+
+Test append and __str__
+>>> mylist.append(5)
+>>> mylist.append(2)
+>>> mylist.append(9)
+>>> print(mylist)
+[5, 2, 9]
+
+Test print_sorted with positive numbers
+>>> mylist.print_sorted()
+[2, 5, 9]
+
+Test print_sorted with negative numbers
+>>> mylist.append(-1)
+>>> mylist.print_sorted()
+[-1, 2, 5, 9]
+
+Test print_sorted with empty list
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
