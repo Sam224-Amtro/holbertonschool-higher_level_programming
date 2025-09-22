@@ -3,6 +3,7 @@
 Ce module définit la fonction inherits_from.
 """
 
+
 def inherits_from(obj, a_class):
     """
     Renvoie True si l'objet est une instance d'une classe qui hérite
