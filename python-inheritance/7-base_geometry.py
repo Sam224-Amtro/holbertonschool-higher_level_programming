@@ -2,7 +2,6 @@
 """Module for base_geometry class."""
 
 
-
 class BaseGeometry:
     """A class for basic geometric operations."""
 
@@ -10,6 +9,7 @@ class BaseGeometry:
         """Raises an exception indicating that the method is not
         implemented."""
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """
         Validates that the value is an integer and greater than 0.
@@ -17,8 +17,8 @@ class BaseGeometry:
         Args:
             name (str): The name of the value (used in the exception
             message.)
-
             value (int): The value to validate.
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
