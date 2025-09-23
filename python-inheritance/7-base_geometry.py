@@ -6,24 +6,24 @@ class BaseGeometry:
     """A class for basic geometric operations."""
 
     def area(self):
-        """Raises une exception indiquant que la méthode n'est pas
-        implémenté."""
-        raise Exception("area() n'est pas implémenté")
+        """Raises an exception indicating that the method is not
+        implemented."""
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        Valide que la valeur est un entier et supérieur à 0.
+        Validates that the value is an integer and greater than 0.
 
         Args:
-            name (str): Le nom de la valeur (utilisé dans l'exception
-        message.)
-            value (int): La valeur à valider.
+            name (str): The name of the value (used in the exception
+            message.)
+            value (int): The value to validate.
 
         Raises:
-            TypeError: Si la valeur n'est pas un entier.
-            ValueError: Si la valeur est inférieure ou égale à 0.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to 0.
         """
         if type(value) is not int:
-            raise TypeError(f"{name} Doit être un entier")
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError(f"{name} doit être supérieur à 0")
+            raise ValueError(f"{name} must be greater than 0")
