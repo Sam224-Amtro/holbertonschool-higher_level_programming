@@ -4,8 +4,10 @@ Module 11-square.
 Contient la classe Square qui hérite de Rectangle.
 """
 
+
 # Importation de Rectangle depuis 9-rectangle.py
 Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """Classe Carré qui hérite de Rectangle."""
