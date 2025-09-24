@@ -34,6 +34,7 @@ class Rectangle(BaseGeometry):
         """Renvoie la représentation en chaîne du rectangle.
 
         Returns:
-            str: La description du rectangle au format [Rectangle] <largeur>/<hauteur>.
+            str: La description du rectangle au format
+            [Rectangle] <largeur>/<hauteur>.
         """
         return f"[Rectangle] {self.__width}/{self.__height}"
