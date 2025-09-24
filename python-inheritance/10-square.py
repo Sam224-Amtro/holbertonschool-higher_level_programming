@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 10-square
+Module 11-square
 Ce module définit une classe Square qui hérite de Rectangle.
 """
 
