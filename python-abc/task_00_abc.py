@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # On importe ABC et abstractmethod depuis le module abc
 # ABC : permet de créer des classes abstraites
 # abstractmethod : permet de définir une méthode abstraite
