@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""Module that defines the read_file function"""
+"""Definit la fonction read_file function"""
 
 def read_file(filename=""):
-    """Reads a text file (UTF-8) and prints its content to stdout"""
+    """
+    Lit un fichier texte UTF-8 et affiche son contenu.
+
+    Args:
+        filename (str): Nom du fichier à lire. Par défaut, vide.
+    """
     with open(filename, mode="r", encoding="utf-8") as file:
         print(file.read(), end="")
