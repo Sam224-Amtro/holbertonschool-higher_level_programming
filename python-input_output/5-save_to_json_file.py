@@ -9,7 +9,8 @@ def save_to_json_file(my_obj, filename):
 
     Args:
         my_obj: L'objet à sérialiser et à écrire dans le fichier.
-        filename: Le nom du fichier dans lequel la représentation JSON sera enregistrée.
+        filename: Le nom du fichier dans lequel la représentation
+        JSON sera enregistrée.
     """
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(my_obj, file)
