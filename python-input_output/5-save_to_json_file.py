@@ -12,7 +12,7 @@ def save_to_json_file(my_obj, filename):
         filename: Le nom du fichier dans lequel la représentation
         JSON sera enregistrée.
     """
-    
+
     # Ouvre le fichier en écriture et ferme automatiquement
     # le fichier à la fin.
     with open(filename, 'w', encoding='utf-8') as file:
