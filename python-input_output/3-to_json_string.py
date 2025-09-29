@@ -7,5 +7,5 @@
 import json
 
 def to_json_string(my_obj):
-    """Returns a string of the JSON files"""
+    """Renvoie une chaîne des fichiers JSON"""
     return json.dumps(my_obj)
