@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Definit la fonction read_file function"""
+"""Module contenant la fonction read_file"""
 
 def read_file(filename=""):
     """
@@ -8,5 +8,8 @@ def read_file(filename=""):
     Args:
         filename (str): Nom du fichier à lire. Par défaut, vide.
     """
-    with open(filename, mode="r", encoding="utf-8") as file:
-        print(file.read(), end="")
+    try:
+        with open(filename, mode="r", encoding="utf-8") as file:
+            print(file.read(), end="")
+    except FileNotFoundError:
+        pass
