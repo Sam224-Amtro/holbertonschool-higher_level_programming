@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define function Write file"""
 
+
 def append_write(filename="", text=""):
     """
     Ajoute du texte à la fin d'un fichier et retourne le nombre
