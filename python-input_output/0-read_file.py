@@ -12,7 +12,7 @@ def read_file(filename=""):
 
     # Le mot-clé "with" garantit que le fichier sera fermé automatiquement,
     # même en cas d'erreur (bonne pratique pour la gestion des fichiers).
-    with open(filename, mode="r", encoding="utf-8") as file:
+    with open(filename, encoding="utf-8") as file:
 
         # La méthode read() lit l’intégralité du contenu du
         # fichier en une seule fois.
