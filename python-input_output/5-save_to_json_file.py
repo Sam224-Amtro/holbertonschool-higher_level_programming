@@ -2,6 +2,7 @@
 """Module pour JSON File"""
 import json
 
+
 def save_to_json_file(my_obj, filename):
     """
     Écrit un objet dans un fichier texte en utilisant sa représentation JSON.
