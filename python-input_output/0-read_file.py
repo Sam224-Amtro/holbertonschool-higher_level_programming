@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Definit la fonction read"""
+"""Module qui définit la fonction read_file"""
 
 def read_file(filename=""):
     """
