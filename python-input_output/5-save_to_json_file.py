@@ -12,5 +12,7 @@ def save_to_json_file(my_obj, filename):
         filename: Le nom du fichier dans lequel la représentation
         JSON sera enregistrée.
     """
+    # Ouvre le fichier `filename` en écriture avec l'encodage UTF-8
     with open(filename, 'w', encoding='utf-8') as file:
+        # Écrit l'objet Python `my_obj` dans le fichier au format JSON
         json.dump(my_obj, file)
