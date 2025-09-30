@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Definit Pascal's Triangle"""
 
+
 def pascal_triangle(n):
     """Returns a list of lists representing Pascal's triangle up to level n."""
     # Cette fonction prend un entier n et retourne le triangle de Pascal
