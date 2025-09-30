@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Student to JSON'''
 
+
 # Définition de la classe Student pour représenter un étudiant
 class Student:
     """Classe représentant un étudiant avec des attributs de base."""
