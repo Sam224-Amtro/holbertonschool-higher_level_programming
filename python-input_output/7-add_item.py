@@ -1,13 +1,21 @@
 #!/usr/bin/python3
 import sys
-import json
+from pathlib import Path
+
+# Import des fonctions depuis les fichiers imposés par Holberton
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-args = sys.argv
 filename = "add_item.json"
-with open(filename, 'a+', encoding="utf-8") as f:
-    my_list = []
-    my_list.append(args[1:])
-    save_to_json_file(my_list, filename)
-    load_from_json_file(filename)
+
+# Charger l’ancienne liste si le fichier existe
+if Path(filename).exists():
+    items = load_from_json_file(filename)
+else:
+    items = []
+
+# Ajouter les nouveaux arguments
+items.extend(sys.argv[1:])
+
+# Sauvegarder la liste mise à jour
+save_to_json_file(items, filename)
