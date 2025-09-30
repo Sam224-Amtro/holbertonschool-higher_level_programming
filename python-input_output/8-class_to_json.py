@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module pour JSON"""
+"""Class pour JSON"""
 import json
 
 
