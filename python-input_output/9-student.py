@@ -11,6 +11,6 @@ class Student:
 
     def to_json(self):
         """
-        Retourne la description de dictionnaire.
+        Retourne un dictionnaire contenant les informations de l'étudiant
         """
         return self.__dict__
