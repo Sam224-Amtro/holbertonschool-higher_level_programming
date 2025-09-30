@@ -8,6 +8,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
+
     def to_json(self):
         """
         Retourne la description d’un objet sous forme de dictionnaire.
