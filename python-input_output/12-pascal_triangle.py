@@ -1,37 +1,41 @@
 #!/usr/bin/python3
 """Definit Pascal's Triangle"""
 
-def triangle_pascal(n):
-    """
-    Génère le triangle de Pascal jusqu'à n lignes.
+def pascal_triangle(n):
+    """Returns a list of lists representing Pascal's triangle up to level n."""
+    # Cette fonction prend un entier n et retourne le triangle de Pascal
+    # sous forme d'une liste de listes, jusqu'au niveau n (n lignes).
 
-    Args:
-        n (int): Le nombre de lignes du triangle de Pascal.
-
-    Returns:
-        list: Une liste de listes représentant le triangle de Pascal.
-    """
     if n <= 0:
-        return []  # Retourne une liste vide si n est inférieur ou égal à 0
+        return []
+        # Si n est inférieur ou égal à 0, le triangle n'a pas de lignes,
+        # donc on retourne une liste vide.
 
-    triangle = []  # Initialise le triangle comme une liste vide
+    triangle = [[1]]
+    # On initialise le triangle avec la première ligne,
+    # qui contient toujours un seul 1.
 
-    for i in range(n):
-        # Crée une nouvelle ligne avec 1 au début
-        ligne = [1]
+    for i in range(1, n):
+        # On boucle de la deuxième ligne (i=1) jusqu'à la n-ième ligne.
+        prev_row = triangle[-1]
+        # On récupère la dernière ligne du triangle
+        # (celle construite précédemment).
 
-        # Remplit les valeurs du milieu de la ligne
-        if i > 0:
-            for j in range(1, i):
-                # Chaque valeur est la somme des deux valeurs au-dessus
-                ligne.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        new_row = [1]
+        # On commence la nouvelle ligne avec un 1, qui est toujours
+        # le premier élément.
 
-        # Ajoute 1 à la fin de la ligne si ce n'est pas la première ligne
-        if i > 0:
-            ligne.append(1)
+        for j in range(1, len(prev_row)):
+            new_row.append(prev_row[j - 1] + prev_row[j])
+            # Chaque élément intermédiaire de la nouvelle ligne est la somme
+            # de deux éléments adjacents de la ligne précédente.
 
-        # Ajoute la ligne au triangle
-        triangle.append(ligne)
+        new_row.append(1)
+        # On termine la nouvelle ligne avec un 1, qui est toujours
+        # le dernier élément.
+
+        triangle.append(new_row)
+        # On ajoute la nouvelle ligne au triangle.
 
     return triangle
-
+    # On retourne le triangle complet sous forme de liste de listes.
