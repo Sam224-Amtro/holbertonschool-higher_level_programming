@@ -8,7 +8,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     """Handler HTTP simple qui répond aux requêtes GET."""
 
-    def do_GET(self):
+    def do_get(self):
         """Gère une requête HTTP GET."""
         if self.path == '/':
             self.send_response(200)
@@ -42,6 +42,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"Endpoint non trouve")
+
 
 if __name__ == "__main__":
     server_address = ('', 8000)
