@@ -1,47 +1,41 @@
 #!/usr/bin/python3
 """Définit la classe SimpleHTTPRequestHandler pour un serveur API de base."""
-
 import json
+import http.server
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-    """Handler HTTP simple qui répond aux requêtes GET."""
-
-    def do_get(self):
-        """Gère une requête HTTP GET."""
+    def do_GET(self):
         if self.path == '/':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Bonjour, ceci est une API simple !")
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == '/data':
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            data = {"name": "Alice", "age": 25, "city": "Paris"}
+            data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode('utf-8'))
         elif self.path == '/status':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"OK")
         elif self.path == '/info':
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            info = {"version": "1.0", "description":
-                    "Une API simple construite avec http.server"}
+            info = {"version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode('utf-8'))
         else:
             self.send_response(404)
-            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Endpoint non trouve")
-
+            self.wfile.write(b"Endpoint not found")
 
 if __name__ == "__main__":
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print("Serveur démarré sur le port 8000...")
+    print("Starting server on port 8000...")
     httpd.serve_forever()
