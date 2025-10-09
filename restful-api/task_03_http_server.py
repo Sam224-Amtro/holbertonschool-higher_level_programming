@@ -8,7 +8,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     """Handler HTTP simple qui répond aux requêtes GET."""
-
     def do_get(self):
         """Gère une requête HTTP GET."""
         if self.path == '/':
