@@ -5,6 +5,7 @@ import json
 import http.server
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
