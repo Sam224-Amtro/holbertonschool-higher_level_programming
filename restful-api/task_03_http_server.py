@@ -3,12 +3,14 @@
 
 
 import json
-import http.server
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
+    """Handler HTTP simple qui répond aux requêtes GET."""
+
+    def do_get(self):
+        """Gère une requête HTTP GET."""
         if self.path == '/':
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
@@ -33,7 +35,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             info = {"version": "1.0", "description":
-                                "Une API simple construite avec http.server"}
+                    "Une API simple construite avec http.server"}
             self.wfile.write(json.dumps(info).encode('utf-8'))
 
         else:
