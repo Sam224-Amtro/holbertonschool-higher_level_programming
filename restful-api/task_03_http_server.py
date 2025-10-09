@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 """Définit la classe SimpleHTTPRequestHandler pour un serveur API de base."""
 
-
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     """Handler HTTP simple qui répond aux requêtes GET."""
-    def do_get(self):
+
+    def do_GET(self):
         """Gère une requête HTTP GET."""
         if self.path == '/':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"Bonjour, ceci est une API simple !")
 
@@ -25,7 +24,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         elif self.path == '/status':
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"OK")
 
@@ -39,7 +38,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         else:
             self.send_response(404)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"Endpoint non trouve")
 
