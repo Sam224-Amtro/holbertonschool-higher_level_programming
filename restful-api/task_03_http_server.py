@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the SimpleHTTPRequestHandler class for a basic API server."""
+"""Définit la classe SimpleHTTPRequestHandler pour un serveur API de base."""
 
 
 import json
