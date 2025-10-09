@@ -33,7 +33,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             info = {"version": "1.0", "description":
-                    "Une API simple construite avec http.server"}
+                                "Une API simple construite avec http.server"}
             self.wfile.write(json.dumps(info).encode('utf-8'))
 
         else:
