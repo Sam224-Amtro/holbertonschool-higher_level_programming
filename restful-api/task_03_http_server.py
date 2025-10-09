@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Defines the SimpleHTTPRequestHandler class for a basic API server."""
 
-
 import json
 import http.server
 from http.server import BaseHTTPRequestHandler, HTTPServer
