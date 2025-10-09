@@ -4,6 +4,7 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     """Handler HTTP simple qui répond aux requêtes GET."""
 
