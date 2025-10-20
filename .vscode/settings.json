@@ -1,0 +1,6 @@
+{
+	"python-envs.pythonProjects": [],
+	"python.analysis.extraPaths": [
+		"./restful-api/task_04_"
+	]
+}
