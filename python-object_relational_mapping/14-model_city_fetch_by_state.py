@@ -22,7 +22,9 @@ if __name__ == "__main__":
     # Fait une requête qui joint les tables City et State
     # Trie les résultats par ID de ville (croissant)
     # Pour chaque paire (ville, état), affiche : "nom_état: (id_ville) nom_ville"
-    for city, state in session.query(City, State).join(State).order_by(City.id.asc()).all():
+    for city, state in session.query(
+            City, State).join(State).order_by(City.id.asc()).all():
+        # Affiche le nom de l'état et l'ID et le nom de la ville associée
         print(f'{state.name}: ({city.id}) {city.name}')
 
     # Ferme la session après utilisation
