@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module qui joint deux tables : State et City"""
+"""Module joining 2 tables"""
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
@@ -7,25 +7,25 @@ from sqlalchemy.orm import Session
 from sys import argv
 
 if __name__ == "__main__":
-    # Connexion à la base MySQL (avec user, mot de passe et nom de base en arguments)
+    # Création d'une instance de moteur SQLAlchemy
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]),
-        pool_pre_ping=True   # Vérifie que la connexion est toujours active
+        pool_pre_ping=True,
     )
 
-    # Crée les tables si elles n’existent pas déjà
+    # Création des tables dans la base de données
     Base.metadata.create_all(engine)
 
-    # Ouvre une session avec la base
+    # Ouverture d'une session avec la base de données
     session = Session(engine)
 
-    # Fait une requête qui joint les tables City et State
-    # Trie les résultats par ID de ville (croissant)
-    # Pour chaque paire (ville, état), affiche : "nom_état: (id_ville) nom_ville"
+    # Requête pour joindre les tables City et State en utilisant l'attribut
+    # de clé étrangère, triée par l'ID de la ville (City.id),
+    # et affichage des résultats
     for city, state in session.query(
             City, State).join(State).order_by(City.id.asc()).all():
         # Affiche le nom de l'état et l'ID et le nom de la ville associée
         print(f'{state.name}: ({city.id}) {city.name}')
 
-    # Ferme la session après utilisation
+    # Fermeture de la session après la fin de l'exécution
     session.close()
