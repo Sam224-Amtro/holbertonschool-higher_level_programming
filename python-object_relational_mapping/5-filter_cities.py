@@ -1,28 +1,35 @@
 #!/usr/bin/python3
-"""Module listing all cities from the state passed in argument"""
+"""
+Lists all cities from the database hbtn_0e_4_usa that belong
+to the state name passed as argument.
+"""
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    # Connexion à la base de données
-    db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2], db=argv[3])
+    # Connect to MySQL server
+    db = MySQLdb.connect(
+        host="localhost",
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
+        port=3306
+    )
 
-    # Création d'un curseur
     cur = db.cursor()
 
-    # Exécution de la requête SQL (avec JOIN au lieu de sous-requête)
+    # Execute query with JOIN (recommended and efficient)
     cur.execute("""
         SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
-        WHERE states.name = %(state)s
+        WHERE states.name = %s
         ORDER BY cities.id ASC;
-    """, {"state": argv[4]})
+    """, (argv[4],))  # ← tuple, pas dict !
 
-    # Récupération et affichage des résultats
-    rows = [row[0] for row in cur.fetchall()]
-    print(', '.join(rows))
+    # Fetch and print results
+    rows = cur.fetchall()
+    print(", ".join([row[0] for row in rows]))
 
-    # Fermeture du curseur et de la connexion
     cur.close()
     db.close()
