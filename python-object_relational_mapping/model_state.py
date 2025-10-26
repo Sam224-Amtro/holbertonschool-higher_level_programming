@@ -7,6 +7,7 @@ to work with SQLAlchemy ORM.
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
+# Create the Base instance
 Base = declarative_base()
 
 
