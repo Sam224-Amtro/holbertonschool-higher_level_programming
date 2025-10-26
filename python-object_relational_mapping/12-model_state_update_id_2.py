@@ -1,25 +1,33 @@
 #!/usr/bin/python3
 """
-Script qui modifie le nom d'un objet State dans la base de données hbtn_0e_6_usa.
+Relie la classe State à la table dans la base de données et met à jour un enregistrement
 """
-
 from sys import argv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
+    # Connexion à la base MySQL (avec user, mot de passe et nom de base en arguments)
     engine = create_engine(
-        f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
+        "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]),
         pool_pre_ping=True
     )
+
+    # Crée la table si elle n’existe pas
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    # Ouvre une session avec la base
+    session = Session(engine)
 
-    etat_a_modifier = session.query(State).filter_by(id=2).first()
-    if etat_a_modifier:
-        etat_a_modifier.name = "New Mexico"
-        session.commit()
+    # Cherche l’état avec l’id = 2
+    state = session.query(State).filter(State.id.like(2)).first()
+
+    # Change son nom en "New Mexico"
+    state.name = 'New Mexico'
+
+    # Enregistre la modification
+    session.commit()
+
+    # Ferme la session
+    session.close()
